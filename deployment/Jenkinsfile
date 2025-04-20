@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://tu-repositorio.git', branch: 'main'
+                git url: 'https://github.com/alovba1/gitdevops.git', branch: 'main'
             }
         }
         stage('Build') {
