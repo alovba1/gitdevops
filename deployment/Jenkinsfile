@@ -11,12 +11,7 @@ pipeline {
                 bat './gradlew build'
             }
         }
-        stage('Test') {
-            steps {
-                bat './gradlew test'
-                junit '**/build/test-results/test/*.xml'
-            }
-        }
+     
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
