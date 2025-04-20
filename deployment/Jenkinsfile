@@ -13,14 +13,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './gradlew test'
+                bat './gradlew test'
                 junit '**/build/test-results/test/*.xml'
             }
         }
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh './gradlew sonarqube'
+                    bat './gradlew sonarqube'
                 }
             }
         }
